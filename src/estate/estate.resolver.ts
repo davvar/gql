@@ -1,38 +1,37 @@
 import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
 import { EstateService } from './estate.service';
-import { Test } from './entities/estate.entity';
-import { CreateTestInput } from './dto/create-test.input';
-import { UpdateTestInput } from './dto/update-test.input';
+import { Estate } from './entities/estate.entity';
+import repos from 'src/databases';
 
 // createTest(@Args('createTestInput') createTestInput: CreateTestInput) {
 
-@Resolver(() => Test)
-export class EstateResolver implements IEntity {
+@Resolver(() => Estate)
+export class EstateResolver {
   constructor(private readonly testService: EstateService) {
     this.testService = new EstateService();
   }
 
-  @Query(() => Test, { name: 'test' })
-  get(): Promise<any[]> {
-    throw new Error('Method not implemented.');
+  @Query(() => [Estate], { name: 'getEstates' })
+  get(): Promise<Estate[]> {
+    return repos.estates.get().then((res) => (res as any).data);
   }
 
-  @Query(() => Test, { name: 'test' })
+  @Query(() => Estate)
   getById(id: string): Promise<any> {
     throw new Error('Method not implemented.');
   }
 
-  @Mutation(() => Test)
+  @Mutation(() => Estate)
   create(data: Partial<any>): Promise<any> {
     throw new Error('Method not implemented.');
   }
 
-  @Mutation(() => Test)
+  @Mutation(() => Estate)
   update(id: string, data: Partial<any>): Promise<boolean> {
     throw new Error('Method not implemented.');
   }
 
-  @Mutation(() => Test)
+  @Mutation(() => Estate)
   delete(id: string): Promise<boolean> {
     throw new Error('Method not implemented.');
   }

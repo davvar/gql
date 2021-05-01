@@ -1,6 +1,14 @@
 {
   "workbench.colorCustomizations": {
-    "statusBar.background": "#1d6444cb",
+    "statusBar.background": "#1d644498",
     "statusBar.foreground": "#e7e7e7",
   },
+
+  "files.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/dist": true,
+  },
+  "peacock.color": "#1d6444cb",
+  "prettier.printWidth": 180,
 }
