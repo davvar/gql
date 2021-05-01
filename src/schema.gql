@@ -1,0 +1,108 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Estate {
+  creatorAccount: String!
+  name: String!
+  id: String!
+  creatorIsOwner: Boolean!
+  recordNo: Int!
+  owners: Int!
+  associatedAccounts: Int!
+  photos: Int!
+  purchases: Int!
+  managingCompanyFees: Int!
+  address: Int!
+  primaryUse: Int!
+  mapData: Int!
+  wwwData: Int!
+  reconstructionDate: Int!
+  constructionDate: Int!
+}
+
+type Language {
+  name: String!
+  short: Locale!
+  id: String!
+}
+
+enum Locale {
+  EN
+  RU
+  SK
+}
+
+type Account {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type Country {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type Invoice {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type Query {
+  getEstates: [Estate!]!
+  getById: Estate!
+  languages: [Language!]!
+  language(id: String!): Language!
+  accounts: [Account!]!
+  account(id: String!): Account!
+  countries: [Country!]!
+  country(id: Int!): Country!
+  invoices: [Invoice!]!
+  invoice(id: Int!): Invoice!
+}
+
+type Mutation {
+  create: Estate!
+  update: Estate!
+  delete: Estate!
+  createAccount(createAccountInput: CreateAccountInput!): Account!
+  updateAccount(updateAccountInput: UpdateAccountInput!): Account!
+  removeAccount(id: Int!): Account!
+  createCountry(createCountryInput: CreateCountryInput!): Country!
+  updateCountry(updateCountryInput: UpdateCountryInput!): Country!
+  removeCountry(id: Int!): Country!
+  createInvoice(createInvoiceInput: CreateInvoiceInput!): Invoice!
+  updateInvoice(updateInvoiceInput: UpdateInvoiceInput!): Invoice!
+  removeInvoice(id: Int!): Invoice!
+}
+
+input CreateAccountInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateAccountInput {
+  id: String!
+}
+
+input CreateCountryInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateCountryInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input CreateInvoiceInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateInvoiceInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}

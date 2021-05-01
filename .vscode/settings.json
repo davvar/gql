@@ -11,4 +11,9 @@
   },
   "peacock.color": "#1d6444cb",
   "prettier.printWidth": 180,
+  "editor.codeActionsOnSave": {
+    // "source.fixAll": true,
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true,
+  }
 }
